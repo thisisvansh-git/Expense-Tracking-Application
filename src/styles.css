@@ -1,0 +1,154 @@
+:root {
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-card: #334155;
+  --text-primary: #f8fafc;
+  --text-muted: #94a3b8;
+  --accent-green: #10b981;
+  --accent-red: #ef4444;
+  --accent-blue: #3b82f6;
+  --accent-purple: #8b5cf6;
+  --border-color: #475569;
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-family);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  color: var(--text-muted);
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background-color: var(--bg-secondary);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border-color);
+}
+
+.summary-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.summary-card .amount {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+.amount.income { color: var(--accent-green); }
+.amount.expense { color: var(--accent-red); }
+.amount.balance { color: var(--accent-blue); }
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+input, select, button {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  outline: none;
+}
+
+input:focus, select:focus {
+  border-color: var(--accent-blue);
+}
+
+button.btn-primary {
+  background-color: var(--accent-blue);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s;
+}
+
+button.btn-primary:hover {
+  background-color: #2563eb;
+}
+
+.transactions-list {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg-card);
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 5px solid transparent;
+}
+
+.transaction-item.income { border-left-color: var(--accent-green); }
+.transaction-item.expense { border-left-color: var(--accent-red); }
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: var(--accent-red);
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  width: auto;
+}
+
+.export-btn {
+  background-color: var(--accent-purple);
+  width: auto;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+}
